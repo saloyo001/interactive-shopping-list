@@ -6,25 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Shopping List</title>
     <link rel="stylesheet" href="style.css">
-    
+    <script src="script.js" defer></script>
 </head>
 <body>
     <main class="container">
         <h1>My Shopping List</h1>
 
         <form id="shopping-form">
-            <label for="item-name">item</label>
-            <input id="item-name" type="text" placeholder="Item name" required>
-            <label for="price">price</label>
-            <input id="item-price" type="number" placeholder="Price" min="0" step="0.01" required>
+            <label for="item-name">Item</label>
+            <input id="item-name" type="text"
+                   placeholder="Item name" required>
+
+            <label for="item-price">Price</label>
+            <input id="item-price" type="number"
+                   placeholder="Price" min="0" step="0.01" required>
+
             <button type="submit">Add Item</button>
         </form>
-        <div>
-            <h2>list</h2>
+
+        <h2>List</h2>
         <section id="grid"></section>
-        <section class="hidden-btn"><button id="clear-btn">clear</button></section>
-        </div>
-     
-    <script src="script.js" defer></script>
+
+        <h3 id="total-cost">Total purchased: 0.00</h3>
+
+        <button id="clear-btn" type="button">Clear List</button>
+    </main>
 </body>
 </html>
