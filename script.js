@@ -31,9 +31,22 @@ function showItems() {
             showItems();
         };
  
-        
+        let editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
 
-        div.append(text, buyBtn);
+        editBtn.onclick = function() {
+            let newName = prompt("New item name", item.name);
+            let newPrice = prompt("New price", item.price);
+
+            if (newName && newName.trim() !== "" && newPrice !== null &&
+                newPrice.trim() !== "" && Number(newPrice) >= 0) {
+                item.name = newName.trim();
+                item.price = Number(newPrice);
+                showItems();
+            }
+        };
+
+        div.append(text, buyBtn, editBtn);
         grid.appendChild(div);
     });
 
